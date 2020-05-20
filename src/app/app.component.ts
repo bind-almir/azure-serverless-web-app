@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(public http: HttpClient) { }
 
   getHello() {
-    return this.http.get('/api/hello');
+    this.http.get('/api/hello').subscribe(response => console.log(response), err => console.log(err));
   }
 }
